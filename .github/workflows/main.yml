@@ -1,10 +1,16 @@
 on:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'eic/generate-meeting-slides branch to run against'
+        type: string
+        default: 'main'
+        required: false
 
 jobs:
   generate-weekly-meeting-slides:
     runs-on: ubuntu-latest
     steps:
-    - uses: eic/generate-meeting-slides@main
+    - uses: eic/generate-meeting-slides@${{ inputs.branch }}
       with:
         since: "1 week ago"

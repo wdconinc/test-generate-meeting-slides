@@ -11,6 +11,11 @@ jobs:
   generate-weekly-meeting-slides:
     runs-on: ubuntu-latest
     steps:
-    - uses: eic/generate-meeting-slides@${{ inputs.branch }}
+    - uses: actions/checkout@v3
+      with:
+        repository: eic/generate-meeting-slides
+        ref: ${{ inputs.branch }}
+        path: eic/generate-meeting-slides
+    - uses: ./eic/generate-meeting-slides
       with:
         since: "1 week ago"

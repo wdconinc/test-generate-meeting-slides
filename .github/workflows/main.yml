@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: 'eic/generate-meeting-slides branch to run against'
+        description: 'eic/generate-meeting-slides branch'
         type: string
         default: 'main'
         required: false
